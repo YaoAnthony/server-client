@@ -145,7 +145,7 @@ class Client:
         if resp.error is None:
             self._last_log_number += 1
             self._server_session_token = resp.token
-
+raise errors.UnknownServerError()
         elif resp.error == types.Errcode.USER_ALREADY_EXISTS:
             raise errors.UserAlreadyExistsError(self._username)
         else:
