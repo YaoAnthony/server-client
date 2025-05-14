@@ -40,7 +40,7 @@ class Client:
     def __init__(
         self,
         username: str, # 必填参数，表示客户端的用户名。 类型是 str，例如 "alice"。
-        remote_url: t.Optional[str] = None, # remote_url: t.Optional[str] = None, 表示远程服务器的URL。 类型是 str，例如 "http://localhost:5000"。 如果没有提供，则假定为 "http://localhost:5000"。
+self._remote_url = remote_url if remote_url else os.getenv('REMOTE_URL', 'http://localhost:5000')
         user_secret: t.Optional[bytes] = None,
     ) -> None:
         """Initialize a client given a username, a
