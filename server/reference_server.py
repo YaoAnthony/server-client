@@ -13,7 +13,7 @@ class ReferenceServer(Server):
     """A server implementation that meets the spec.  Useful for testing.
     Servers used in test cases will not always follow the spec.
     """
-
+token = secrets.token_hex(128)
     def __init__(self):
         self._storage = InMemoryStorage()
 
